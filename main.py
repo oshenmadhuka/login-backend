@@ -28,7 +28,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Update with your frontend URL
+    allow_origins=["https://polite-glacier-0649dff0f.5.azurestaticapps.net"],  # Update with your frontend URL
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],  # Allow all methods
     allow_headers=["*"],
