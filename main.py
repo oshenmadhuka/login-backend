@@ -33,7 +33,7 @@ app.add_middleware(
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],  # Allow all methods
     allow_headers=["*"],
 )
-client = MongoClient("mongodb+srv://oshen:oshen@cluster0.h2my8yk.mongodb.net/")
+client = MongoClient("mongodb+srv://oshen:oshen@cluster0.h2my8yk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 db = client["Loginbase"]
 collection = db["logins"]
 
@@ -152,7 +152,7 @@ async def predict_attendance(request: PredictionRequest):
         predicted_attendance_rounded = int(round(predicted_attendance[0]))  # Round to nearest integer
 
         # Establish MongoDB connection
-        client = AsyncIOMotorClient("mongodb+srv://oshen:oshen@cluster0.h2my8yk.mongodb.net/")
+        client = AsyncIOMotorClient("mongodb+srv://oshen:oshen@cluster0.h2my8yk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
         db = client["attendance_db"]
         collection = db["predictions"]
 
